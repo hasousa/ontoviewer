@@ -1,0 +1,37 @@
+<script>
+    $('#receita').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">        
+        <div class="panel panel-default col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Tipo</th>
+                    <th>Ano</th>
+                    <th>Montante</th>
+                    <th>Fundamento</th>
+                    <th>Pagador</th>
+                </thead>
+                <tbody>
+                    <% _.each(receitas, function(receita){%>
+                    <tr id="dados">
+                        <td id='tipo'><%= receita.tipo %></td>
+                        <td id='ano'><%= receita.ano %></td>
+                        <td id='montante'><%= receita.montante %></td>
+                        <td id='fundamento'><%= receita.fundamento %></td>
+                        <td id="pagador"><a href="#"><%= receita.pagador.nome %></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("td#pagador").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

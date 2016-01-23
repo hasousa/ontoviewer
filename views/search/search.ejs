@@ -1,0 +1,31 @@
+<div class="container-fluid entidade">
+    <div class="col-md-5">
+        <div class="panel panel-default pesquisa">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>NIF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% _.each(result, function(entidade){%>
+                    <tr id="dados">
+                        <td><a href="#"><%= entidade.nome %></a></td>
+                        <td><%= entidade.tipo %></td>
+                        <td><%= entidade.nif %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("tr#dados td").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

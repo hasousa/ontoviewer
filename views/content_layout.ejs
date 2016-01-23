@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TransparencyOntology</title>
+
+        <!-- Viewport mobile tag for sensible mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+        <script src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!--  
+Stylesheets and Preprocessors
+==============================
+
+You can always bring in CSS files manually with `<link>` tags, or asynchronously
+using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+By default, stylesheets from your `assets/styles` folder are included
+here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+are supported. In production, your styles will be minified and concatenated into
+a single file.
+
+To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+For example, here are a few things you could do:
+
++ Change the order of your CSS files
++ Import stylesheets from other directories
++ Use a different or additional preprocessor, like SASS, SCSS or Stylus
+-->
+
+        <!--STYLES-->
+        <link rel="stylesheet" href="/styles/custom.css">
+        <link rel="stylesheet" href="/styles/importer.css">
+        <!--STYLES END-->
+    </head>
+
+    <body>
+        <header>
+            <h1 id='title'>TransparencyOntology                
+                <img src="https://www.drupal.org/files/issues/demo_stamp.gif" style="z-index: -1">
+            </h1>
+        </header>
+
+        <!--------------------------------------------------------------------><!-------------------------------------------------------------------->
+        <!---------------------------------------------------------        NAVIGATION       --------------------------------------------------------->
+        <h2><%= entidade.nome%></h2>
+
+        <div>
+            <ul class="nav nav-tabs">
+                <li role="presentation" id="entidade"><a href="#">Entidade</a></li>
+                <li role="presentation" class="dropdown" id="contractacao">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contratação<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="contract"><a href="#">Contratação</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="avenca"><a href="#">Avença</a></li>
+                        <li id="bemovel"><a href="#">Bem Móvel</a></li>
+                        <li id="cont_empreitada"><a href="#">Empreitada</a></li>
+                        <li id="servico"><a href="#">Serviço</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown pubonly" id="investimento">
+                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Investimento<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="invest"><a href="#">Investimento</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="bemmovel"><a href="#">Bem Móvel</a></li>
+                        <li id="ppp"><a href="#">PPP</a></li>
+                        <li id="partsoc"><a href="#">Participação Social</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown pubonly" id="receita">
+                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Receita<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="rec"><a href="#">Receita</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="imposto"><a href="#">Imposto</a></li>
+                        <li id="subsidiorec"><a href="#">Subsídio</a></li>
+                        <li id="tarifa"><a href="#">Tarifa</a></li>
+                        <li id="taxa"><a href="#">Taxa</a></li>
+                        <li id="transfrec"><a href="#">Transferência</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown pubonly" id="despesa">
+                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Despesa<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="desp"><a href="#">Despesa</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="despext"><a href="#">Despesa Extraordinária</a></li>
+                        <li id="indem"><a href="#">Indemnização</a></li>
+                        <li id="sub"><a href="#">Subsídios</a></li>
+                        <li id="transf"><a href="#">Transferência</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown" id="endividamento">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Endividamento<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="endiv"><a href="#">Endividamento</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="divforn"><a href="#">Dívidas Fornecedores</a></li>
+                        <li id="emprestimo"><a href="#">Empréstimos</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown pubonly" id="patrimonio">
+                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Património<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="patrim"><a href="#">Património</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="aquis"><a href="#">Aquisição</a></li>
+                        <li id="arrend"><a href="#">Arrendamento</a></li>
+                        <li id="ced"><a href="#">Cedência</a></li>
+                        <li id="exp"><a href="#">Expropriação</a></li>
+                        <li id="perm"><a href="#">Permuta</a></li>
+                        <li id="vend"><a href="#">Venda</a></li>
+                        <li id="empreitada"><a href="#">Empreitada/Obra</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown" id="litigios">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Litígios Judiciais<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="litjud"><a href="#">Litígios</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li id="judinst"><a href="#">Instaurado</a></li>
+                        <li id="judalvo"><a href="#">Alvo</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+            var nome = "<%= entidade.nome %>";
+
+            $( document ).ready(function(){
+                if('<%= entidade.tipo%>' != 'publica'){
+                   $('.pubonly').addClass('disabled');
+            }
+                                $( ".disabled" ).off();
+            }); 
+
+            $("#entidade").click(function(e){  
+                window.location= '/entidade/' + nome;
+            });
+
+            $("#contract").click(function(e){ 
+                window.location= '/contrato/' + nome;
+            });
+
+            $('#avenca').click(function(){
+                window.location= '/contrato/' + nome + '/filter/avenca';
+            });
+
+            $('#bemovel').click(function(){
+                window.location= '/contrato/' + nome + '/filter/bem_movel';
+            });
+
+            $('#cont_empreitada').click(function(){
+                window.location= '/contrato/' + nome + '/filter/empreitada';
+            });
+
+            $('#servico').click(function(){
+                window.location= '/contrato/' + nome + '/filter/servico';
+            });
+
+            $("#invest").click(function(e){ 
+                window.location= '/investimento/' + nome;
+            });
+            
+             $("#bemmovel").click(function(e){ 
+                window.location= '/investimento/' + nome + '/filter/bem_movel';
+            });
+            
+             $("#ppp").click(function(e){ 
+                window.location= '/investimento/' + nome + '/filter/ppp';
+            });
+            
+             $("#partsoc").click(function(e){ 
+                window.location= '/investimento/' + nome + '/filter/participacao_social';
+            });
+
+            $("#rec").click(function(e){ 
+                window.location= '/receita/' + nome;
+            });
+            
+            $("#imposto").click(function(e){ 
+                window.location= '/receita/' + nome + '/filter/imposto';
+            });
+            
+            $("#subsidiorec").click(function(e){ 
+                window.location= '/receita/' + nome + '/filter/subsidio_recebido';
+            });
+            
+            $("#tarifa").click(function(e){ 
+                window.location= '/receita/' + nome + '/filter/tarifa';
+            });
+            
+            $("#taxa").click(function(e){ 
+                window.location= '/receita/' + nome + '/filter/taxa';
+            });
+            
+            $("#transfrec").click(function(e){ 
+                window.location= '/receita/' + nome + '/filter/transferencia_recebida';
+            });
+
+            $("#desp").click(function(e){ 
+                window.location= '/despesa/' + nome;
+            });
+            
+            $("#despext").click(function(e){ 
+                window.location= '/despesa/' + nome + '/filter/extraordinaria';
+            });
+            
+            $("#indem").click(function(e){ 
+                window.location= '/despesa/' + nome + '/filter/indemnizacao';
+            });
+            
+            $("#sub").click(function(e){ 
+                window.location= '/despesa/' + nome + '/filter/subsidio_concedido';
+            });
+            
+            $("#transf").click(function(e){ 
+                window.location= '/despesa/' + nome + '/filter/transferencia';
+            });
+
+            $("#endiv").click(function(e){ 
+                window.location= '/endividamento/' + nome;
+            });
+            
+            $("#divforn").click(function(e){ 
+                window.location= '/endividamento/' + nome + '/filter/divida_fornecedor';
+            });
+            
+            $("#emprestimo").click(function(e){ 
+                window.location= '/endividamento/' + nome + '/filter/emprestimo';
+            });
+
+            $("#patrim").click(function(e){   
+                window.location= '/patrimonio/' + nome;
+            });
+            
+            $("#empreitada").click(function(e){   
+                window.location= '/empreitada/' + nome;
+            });
+            
+            $("#aquis").click(function(e){   
+                window.location= '/patrimonio/' + nome + '/filter/aquisicao';
+            });
+            
+            $("#arrend").click(function(e){   
+                window.location= '/patrimonio/' + nome + '/filter/arrendamento';
+            });
+            
+            $("#ced").click(function(e){   
+                window.location= '/patrimonio/' + nome + '/filter/cedencia';
+            });
+            
+            $("#exp").click(function(e){   
+                window.location= '/patrimonio/' + nome + '/filter/expropriacao';
+            });
+            
+            $("#perm").click(function(e){   
+                window.location= '/patrimonio/' + nome + '/filter/permuta';
+            });
+            
+            $("#vend").click(function(e){   
+                window.location= '/patrimonio/' + nome + '/filter/venda';
+            });
+
+            $("#litjud").click(function(e){ 
+                window.location= '/litigio/' + nome;
+            });
+            
+            $("#judinst").click(function(e){ 
+                window.location= '/litigio/' + nome + '/filter/instaurado';
+            });
+            
+            $("#judalvo").click(function(e){ 
+                window.location= '/litigio/' + nome + '/filter/alvo';
+            });
+        </script>
+
+        <!--------------------------------------------------------------------><!-------------------------------------------------------------------->
+        <!--------------------------------------------------------------------><!-------------------------------------------------------------------->
+
+
+        <%- body %>
+
+        <footer>
+            2015 ® Helena Rolas
+        </footer>
+        <script>
+            $('#title').click(function(){
+                window.location= '/';
+            });
+        </script>
+
+
+        <!--
+Client-side Templates
+========================
+
+HTML templates are important prerequisites of modern, rich client applications.
+To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+that you load these templates client-side.
+
+By default, your Gruntfile is configured to automatically load and precompile
+client-side JST templates in your `assets/templates` folder, then
+include them here automatically (between TEMPLATES and TEMPLATES END).
+
+To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+For example, here are a few things you could do:
+
++ Import templates from other directories
++ Use a different template engine (handlebars, jade, dust, etc.)
++ Internationalize your client-side templates using a server-side
+stringfile before they're served.
+-->
+
+        <!--TEMPLATES-->
+        
+        <!--TEMPLATES END-->
+
+
+        <!--
+
+Client-side Javascript
+========================
+
+You can always bring in JS files manually with `script` tags, or asynchronously
+on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+By default, files in your `assets/js` folder are included here
+automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+and concatenated into a single file.
+
+To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+For example, here are a few things you could do:
+
++ Change the order of your scripts
++ Import scripts from other directories
++ Use a different preprocessor, like TypeScript
+
+-->
+
+        <!--SCRIPTS-->
+        <script src="/js/dependencies/sails.io.js"></script>
+        <!--SCRIPTS END-->
+    </body>
+</html>

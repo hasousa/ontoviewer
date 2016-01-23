@@ -1,0 +1,33 @@
+<script>
+    $('#patrimonio').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">        
+        <div class="panel panel-default col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Investidor</th>
+                    <th>Montante</th>
+                    <th >Investidor</th>
+                </thead>
+                <tbody>
+                    <% _.each(empreitadas, function(empreitada){%>
+                    <tr id="dados">
+                        <td id="investidor"><a href="#"><%= empreitada.investidor.nome %></a></td>
+                        <td><%= empreitada.montante %></td>
+                        <td><%= empreitada.objecto %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("td#investidor").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

@@ -1,0 +1,44 @@
+<script>
+    $('#litigios').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">        
+        <div class="panel panel-default col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Tipo</th>
+                    <th>Número Processo</th>
+                    <th>Prazo Execução</th>
+                    <th>Sentença</th>
+                    <th>Acusador</th>
+                    <th>Réu</th>
+                </thead>
+                <tbody>
+                    <% _.each(litigios, function(litigio){%>
+                    <tr id="dados">
+                        <td id='tipo'><%= litigio.tipo %></td>
+                        <td id='processo'><%= litigio.numero_processo %></td>
+                        <td id='ececucao'><%= litigio.prazo_execucao %></td>
+                        <td id='sentenca'><%= litigio.sentenca %></td>
+                        <td id="acusador"><a href="#"><%= litigio.acusador.nome %></a></td>
+                        <td id="reu"><a href="#"><%= litigio.reu.nome %></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("td#acusador").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+
+    $("td#reu").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

@@ -1,0 +1,53 @@
+<script>
+    $('#patrimonio').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="panel panel-default col-md-5">
+            <div class="panel-heading"><strong>Património</strong></div>
+            <table id='patrimonio' class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Data Registo Predial</th>
+                        <th>Registo Predial</th>
+                        <th>Tipo</th>
+                        <th>Localização</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% _.each(imoveis, function(imovel){%>
+                    <tr id="dados">
+                        <td><%= imovel.data_registo_predial%></td>
+                        <td><%= imovel.registo_predial%></td>
+                        <td><%= imovel.tipo%></td>
+                        <td><%= imovel.localizacao%></td>
+                        <td><%= imovel.valor%></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div> 
+        
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        
+        <div class="panel panel-default col-md-5">
+            <div class="panel-heading"><strong>Actividade</strong></div>
+            <table id='actividade' class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Vendedor</th>
+                        <th>Comprador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="dados">
+                        <td>Exemplo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

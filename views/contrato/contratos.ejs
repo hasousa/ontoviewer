@@ -1,0 +1,65 @@
+<script>
+    $('#contractacao').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">        
+        <div class="panel panel-default col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Tipo</th>
+                    <th>Adjudicante</th>
+                    <th>Adjudicatário</th>
+                    <th>Montante</th>
+                    <th class='avenca'>Funções</th>
+                    <th>Descrição</th>
+                    <th class='empreitada avenca'>Duração</th>
+                    <th class='avenca'>Fundamento</th>
+                    <th class='servico'>Data Publicação</th>
+                    <th>Data Início</th>
+                    <th class='bemmovel'>Prazo Entrega</th>
+                    <th class='bemmovel'>Prazo Pagamento</th>
+                    <th class='servico'>Prazo Execução</th>
+                </thead>
+                <tbody>
+                    <% _.each(contratos, function(contrato){%>
+                    <tr id="dados">
+                        <td id='tipo'><%= contrato.tipo %></td>
+                        <td id="adjudicante"><a href="#"><%= contrato.adjudicante.nome %></a></td>
+                        <td id="adjudicatario"><a href="#"><%= contrato.adjudicatario.nome %></a></td>
+                        <td><%= contrato.montante %></td>
+                        <td class='avenca'><%= contrato.funcoes %></td>
+                        <td><%= contrato.descricao %></td>
+                        <td class='empreitada avenca'><%= contrato.duracao %></td> 
+                        <td class='avenca'><%= contrato.fundamento %></td>
+                        <td class='servico'><%= contrato.data_publicacao %></td>
+                        <td><%= contrato.data_inicio %></td>
+                        <td class='bemmovel'><%= contrato.prazo_entrega %></td>
+                        <td class='bemmovel'><%= contrato.prazo_pagamento %></td>
+                        <td class='servico'><%= contrato.prazo_execucao %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    var classname= "<%= filtro %>";
+
+    $('th:not(.'+classname+')').hide();
+    $('td:not(.'+classname+')').hide();
+    $('th:not([class])').show();
+    $('td:not([class])').show();
+
+    $("td#adjudicante").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+
+    $("td#adjudicatario").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

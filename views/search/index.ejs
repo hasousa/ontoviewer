@@ -1,0 +1,47 @@
+<div id="note">
+    <strong>Nota: </strong>Todos os dados apresentados nesta demonstração são fictícios. Foram criados apenas para efeitos demonstrativos. <a id="close">[OK]</a>
+</div>
+
+<div class="container search">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <form id='pesquisa'>
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="input-group input-group-lg">
+                            <input id="item" type="text" class="form-control typeahead" placeholder="Entidade a pesquisar...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" type="button" id="search">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#search').click(function(){
+        var item = $("#item").val();
+        window.location= 'find/' + item;
+    });
+
+    $( "#pesquisa" ).submit(function( event ) {
+        if($("#item").val()){
+            $('#search').click();   
+        }
+        event.preventDefault();
+    });
+</script>
+
+<script>
+    close = document.getElementById("close");
+    close.addEventListener('click', function() {
+        note = document.getElementById("note");
+        note.style.display = 'none';
+    }, false);
+</script>

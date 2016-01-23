@@ -1,0 +1,37 @@
+<script>
+    $('#despesa').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">        
+        <div class="panel panel-default col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Tipo</th>
+                    <th>Ano</th>
+                    <th>Montante</th>
+                    <th>Fundamento</th>
+                    <th>Receptor</th>
+                </thead>
+                <tbody>
+                    <% _.each(despesas, function(despesa){%>
+                    <tr id="dados">
+                        <td id='tipo'><%= despesa.tipo %></td>
+                        <td id='ano'><%= despesa.ano %></td>
+                        <td id='montante'><%= despesa.montante %></td>
+                        <td id='fundamento'><%= despesa.fundamento %></td>
+                        <td id="receptor"><a href="#"><%= despesa.receptor.nome %></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("td#receptor").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

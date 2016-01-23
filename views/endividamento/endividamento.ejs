@@ -1,0 +1,59 @@
+<script>
+    $('#endividamento').addClass('active');
+</script>
+
+<div class="container-fluid">
+    <div class="row">        
+        <div class="panel panel-default col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <th>Tipo</th>
+                    <th>Data</th>
+                    <th class='divida_fornecedor'>Estrutura Dívida</th>
+                    <th class='emprestimo'>Duração Empréstimo</th>
+                    <th class='emprestimo'>Amortização</th>
+                    <th class='divida_fornecedor'>Natureza Dívida</th>
+                    <th>Montante</th>
+                    <th>Credor</th>
+                    <th>Devedor</th>
+                </thead>
+                <tbody>
+                    <% _.each(endividamentos, function(endividamento){%>
+                    <tr id="dados">
+                        <td id='tipo'><%= endividamento.tipo %></td>
+                        <td id="data"><%= endividamento.data %></td>
+                        <td id="estrutura" class='divida_fornecedor'><%= endividamento.estrutura_divida %></td>
+                        <td id="duracao" class='emprestimo'><%= endividamento.duracao_emprestimo %></td>
+                        <td id="amortizacao" class='emprestimo'><%= endividamento.amortizacao %></td> 
+                        <td id="natureza" class='divida_fornecedor'><%= endividamento.natureza %></td>
+                        <td id="montante"><%= endividamento.montante %></td>
+                        <td id="credor"><a href="#"><%= endividamento.credor.nome %></a></td>
+                        <td id="devedor"><a href="#"><%= endividamento.devedor.nome %></a></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var classname= "<%= filtro %>";
+
+    $('th:not(.'+classname+')').hide();
+    $('td:not(.'+classname+')').hide();
+    $('th:not([class])').show();
+    $('td:not([class])').show();
+    
+    
+    $("td#credor").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+
+    $("td#devedor").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>
