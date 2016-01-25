@@ -14,12 +14,12 @@ module.exports = {
         funcoes:{type: 'string'},
         descricao: {type: 'string'},
         fundamento:{type: 'string'},
-        data_publicacao:{type: 'date'},
-        data_inicio:{type: 'date'},
+        data_publicacao:{type: 'string'},
+        data_inicio:{type: 'string'},
         prazo_entrega: {type: 'string'},
         prazo_pagamento:{type: 'string'},
         prazo_execucao:{type: 'string'},
-        montante: {type: 'float'},
+        montante: {type: 'string'},
         adjudicante: {model: 'entidade'},
         adjudicatario: {model: 'entidade'}
     }

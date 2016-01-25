@@ -12,7 +12,7 @@ module.exports = {
             Entidade.findOne({nome: nomeEntidade}).exec(function(err, entidade){
                 if(entidade != undefined){
                     Patrimonio.find({proprietario: entidade.id }).populateAll().exec(function(err, imoveis){
-                        AccoesPatrimonio.find({or : [
+                        Actividade.find({or : [
                             {comprador: entidade.id},
                             {vendedor: entidade.id},
                             {arrendante: entidade.id},
@@ -41,7 +41,7 @@ module.exports = {
             Entidade.findOne({nome: nomeEntidade}).exec(function(err, entidade){
                 if(entidade != undefined){
                     Patrimonio.find({proprietario: entidade.id}).populateAll().exec(function(err, imoveis){
-                        AccoesPatrimonio.find({or : [
+                        Actividade.find({or : [
                             {comprador: entidade.id},
                             {vendedor: entidade.id},
                             {arrendante: entidade.id},
