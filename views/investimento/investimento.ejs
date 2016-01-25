@@ -34,12 +34,38 @@
                         <td class="ppp"><%= investimento.objectivo%></td>
                         <td class="participacao_social"><%= investimento.capital%></td>
                         <td class="participacao_social"><%= investimento.quotizacao%></td>
-                        
+
+                        <% if (investimento.parceiro_publico) { %>
                         <td id="parpub" class="ppp"><a href="#"><%= investimento.parceiro_publico.nome %></a></td>
+                        <% }else{ %>
+                        <td id="parpub" class="ppp">null</td>
+                        <% } %>
+                        
+                        <% if (investimento.parceiro_privado) { %>
                         <td id="parpriv" class="ppp"><a href="#"><%= investimento.parceiro_privado.nome %></a></td>
+                        <% }else{ %>
+                        <td id="parpriv" class="ppp">null</td>
+                        <% } %>
+                        
+                        <% if (investimento.participante) { %>
                         <td id="participante" class="participacao_social"><a href="#"><%= investimento.participante.nome %></a></td>
+                        <% }else{ %>
+                        <td id="participada" class="participacao_social">null</td>
+                        <% } %>
+
+                        <% if (investimento.participada) { %>
                         <td id="participada" class="participacao_social"><a href="#"><%= investimento.participada.nome %></a></td>
+                        <% }else{ %>
+                        <td id="participada" class="participacao_social">null</td>
+                        <% } %>
+                        
+                        <% if (investimento.investidor) { %>
                         <td id="invest" class="bem_movel"><a href="#"><%= investimento.investidor.nome %></a></td>
+                        <% }else{ %>
+                        <td id="invest" class="bem_movel">null</td>
+                        <% } %>
+                        
+                        
                     </tr>
                     <% }) %>
                 </tbody>
@@ -55,27 +81,27 @@
     $('td:not(.'+classname+')').hide();
     $('th:not([class])').show();
     $('td:not([class])').show();
-    
+
     $("td#parpub").click(function(e){   
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
     });
-    
+
     $("td#parpriv").click(function(e){   
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
     });
-    
+
     $("td#participante").click(function(e){   
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
     });
-    
+
     $("td#participada").click(function(e){   
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
     });
-    
+
     $("td#invest").click(function(e){   
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
