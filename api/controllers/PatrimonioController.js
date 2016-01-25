@@ -12,9 +12,18 @@ module.exports = {
             Entidade.findOne({nome: nomeEntidade}).exec(function(err, entidade){
                 if(entidade != undefined){
                     Patrimonio.find({proprietario: entidade.id }).populateAll().exec(function(err, imoveis){
-                        return res.view('patrimonio/patrimonio', {layout: 'content_layout', imoveis: imoveis, entidade: entidade});  
-                    })    
-                }else{
+                        AccoesPatrimonio.find({or : [
+                            {comprador: entidade.id},
+                            {vendedor: entidade.id},
+                            {arrendante: entidade.id},
+                            {arrendatário: entidade.id},
+                            {cedente: entidade.id},
+                            {cessionario: entidade.id}
+                        ]}).populateAll().exec(function(err, accoes){
+                            return res.view('patrimonio/patrimonio', {layout: 'content_layout', imoveis: imoveis, accoes: accoes, entidade: entidade});
+                        })
+                    })
+                } else{
                     return res.view(404); //return 404 if no entidade found
                 }
             })
@@ -22,20 +31,26 @@ module.exports = {
             return res.view(404); //return 404 if nomeEntidade is undefined
         }
     },
-    
+
+
     filter: function(req, res){
         var nomeEntidade= req.param('nome');
         var field= req.param('field');
 
         if(nomeEntidade != undefined){
             Entidade.findOne({nome: nomeEntidade}).exec(function(err, entidade){
-
                 if(entidade != undefined){
-                    Patrimonio.find({or : [
-                        {adjudicatario: entidade.id },
-                        {adjudicante: entidade.id }
-                    ], tipo: field}).populateAll().exec(function(err, imoveis){
-                        return res.view('patrimonio/patrimonio', {layout: 'content_layout', imoveis: imoveis, entidade:entidade, filtro: field});  
+                    Patrimonio.find({proprietario: entidade.id}).populateAll().exec(function(err, imoveis){
+                        AccoesPatrimonio.find({or : [
+                            {comprador: entidade.id},
+                            {vendedor: entidade.id},
+                            {arrendante: entidade.id},
+                            {arrendatário: entidade.id},
+                            {cedente: entidade.id},
+                            {cessionario: entidade.id}
+                        ], tipo: field}).populateAll().exec(function(err, accoes){
+                            return res.view('patrimonio/patrimonio', {layout: 'content_layout', imoveis: imoveis, accoes: accoes, entidade:entidade, filtro: field});
+                        })
                     })
                 }else{
                     return res.view(404);
@@ -44,5 +59,5 @@ module.exports = {
         }else{
             return res.view(404);
         }
-    } 
+    }
 };

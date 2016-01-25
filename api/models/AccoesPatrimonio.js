@@ -21,7 +21,7 @@ module.exports = {
         prazo_pagamento:{type: 'string'},
         prazo_execucao:{type: 'string'},
         montante: {type: 'float'},
-        pratrimonio: { model: 'patrimonio'},
+        
         comprador: {model: 'entidade'},
         vendedor:{model: 'entidade'},
         arrendante: {model: 'entidade'},
@@ -29,8 +29,6 @@ module.exports = {
         cedente: { model: 'entidade'},
         cessionario:{model: 'entidade'},
         
-        objecto:{ model: 'patrimonio'},
-        comprador: {model: 'entidade'},
-        vendedor: {model: 'entidade'}
+        objecto:{ model: 'patrimonio'}
     }
 };

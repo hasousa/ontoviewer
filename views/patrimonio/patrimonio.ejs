@@ -40,12 +40,17 @@
                     <tr>
                         <th>Vendedor</th>
                         <th>Comprador</th>
+                        <th>Acção</th>
                     </tr>
                 </thead>
-                <tbody>
+                 <tbody>
+                    <% _.each(accoes, function(accao){%>
                     <tr id="dados">
-                        <td>Exemplo</td>
+                        <td><%= accao.vendedor.nome%></td>
+                        <td><%= accao.comprador.nome%></td>
+                        <td><%= accao.tipo%></td>
                     </tr>
+                    <% }) %>
                 </tbody>
             </table>
         </div>
