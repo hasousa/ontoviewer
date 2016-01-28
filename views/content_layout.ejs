@@ -63,13 +63,13 @@ For example, here are a few things you could do:
                 <li role="presentation" class="dropdown" id="contractacao">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contratação<span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li id="contract"><a href="#">Contratação</a></li>
+                    <ul class="dropdown-menu">                        
+                        <li><a id="contract" href="#">Contratação</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="avenca"><a href="#">Avença</a></li>
-                        <li id="bemovel"><a href="#">Bem Móvel</a></li>
-                        <li id="cont_empreitada"><a href="#">Empreitada</a></li>
-                        <li id="servico"><a href="#">Serviço</a></li>
+                        <li><a id="avenca" href="#">Avença</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="bemovel" href="#">Bem Móvel</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="cont_empreitada" href="#">Empreitada</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="servico" href="#">Serviço</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown pubonly" id="investimento">
@@ -157,6 +157,10 @@ For example, here are a few things you could do:
 
             $("#entidade").click(function(e){  
                 window.location= '/entidade/' + nome;
+            });
+            
+            $("#help").click(function(e){  
+                window.location= '/help/' + 'avenca';
             });
 
             $("#contract").click(function(e){ 

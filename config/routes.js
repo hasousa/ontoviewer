@@ -125,6 +125,11 @@ module.exports.routes = {
     'get /litigio/:nome/filter/:field':{
         controller: 'LitigioController',
         action: 'filter'
+    },
+    
+    'get /help/:tag':{
+        controller: 'HelpController',
+        action: 'goto'
     }
 
     /***************************************************************************

@@ -45,6 +45,16 @@ h1{
     clear:both;
 }
 
+.dropdown-menu>li>a{
+    display: inline;
+}
+
+.dropdown-menu>li>i{
+    float: right;
+    padding-right: 15px;
+    cursor: pointer; 
+}
+
 .entidade{
     position: relative;
     top: 2%; 
