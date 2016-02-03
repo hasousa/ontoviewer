@@ -53,10 +53,8 @@ For example, here are a few things you could do:
             </h1>
         </header>
 
-        <!--------------------------------------------------------------------><!-------------------------------------------------------------------->
-        <!---------------------------------------------------------        NAVIGATION       --------------------------------------------------------->
-        <h2><%= entidade.nome%></h2>
-
+        <!-------------------------------------------------------------------->
+        <!----------------------        NAVIGATION       --------------------->
         <div>
             <ul class="nav nav-tabs">
                 <li role="presentation" id="entidade"><a href="#">Entidade</a></li>
@@ -66,86 +64,103 @@ For example, here are a few things you could do:
                     <ul class="dropdown-menu">                        
                         <li><a id="contract" href="#">Contratação</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a id="avenca" href="#">Avença</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="bemovel" href="#">Bem Móvel</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="cont_empreitada" href="#">Empreitada</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="servico" href="#">Serviço</a><i id="help" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="avenca" href="#">Avença</a><i id="avenca" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="bemovel" href="#">Bem Móvel</a><i id="bemovel" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="cont_empreitada" href="#">Empreitada</a><i id="cont_empreitada" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="servico" href="#">Serviço</a><i id="servico" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown pubonly" id="investimento">
                     <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Investimento<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li id="invest"><a href="#">Investimento</a></li>
+                        <li><a id="invest" href="#">Investimento</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="bemmovel"><a href="#">Bem Móvel</a></li>
-                        <li id="ppp"><a href="#">PPP</a></li>
-                        <li id="partsoc"><a href="#">Participação Social</a></li>
+                        <li><a id="bemmovel" href="#">Bem Móvel</a><i id="bemmovel" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="ppp" href="#">PPP</a><i id="ppp" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="partsoc" href="#">Participação Social</a><i id="partsoc" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown pubonly" id="receita">
                     <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Receita<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li id="rec"><a href="#">Receita</a></li>
+                        <li><a id="rec" href="#">Receita</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="imposto"><a href="#">Imposto</a></li>
-                        <li id="subsidiorec"><a href="#">Subsídio</a></li>
-                        <li id="tarifa"><a href="#">Tarifa</a></li>
-                        <li id="taxa"><a href="#">Taxa</a></li>
-                        <li id="transfrec"><a href="#">Transferência</a></li>
+                        <li><a id="imposto" href="#">Imposto</a><i id="imposto" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="subsidiorec" href="#">Subsídio</a><i id="subsidiorec" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="tarifa" href="#">Tarifa</a><i id="tarifa" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="taxa" href="#">Taxa</a><i id="taxa" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="transfrec" href="#">Transferência</a><i id="transfrec" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown pubonly" id="despesa">
                     <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Despesa<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li id="desp"><a href="#">Despesa</a></li>
+                        <li><a id="desp" href="#">Despesa</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="despext"><a href="#">Despesa Extraordinária</a></li>
-                        <li id="indem"><a href="#">Indemnização</a></li>
-                        <li id="sub"><a href="#">Subsídios</a></li>
-                        <li id="transf"><a href="#">Transferência</a></li>
+                        <li><a id="despext" href="#">Despesa Extraordinária</a><i id="despext" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="indem" href="#">Indemnização</a><i id="indem" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="sub" href="#">Subsídios</a><i id="sub" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="transf" href="#">Transferência</a><i id="transf" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown" id="endividamento">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Endividamento<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li id="endiv"><a href="#">Endividamento</a></li>
+                        <li><a id="endiv" href="#">Endividamento</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="divforn"><a href="#">Dívidas Fornecedores</a></li>
-                        <li id="emprestimo"><a href="#">Empréstimos</a></li>
+                        <li><a id="divforn" href="#">Dívidas Fornecedores</a><i id="divforn" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="emprestimo" href="#">Empréstimos</a><i id="emprestimo" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown pubonly" id="patrimonio">
                     <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Património<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li id="patrim"><a href="#">Património</a></li>
+                        <li><a id="patrim" href="#">Património</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="aquis"><a href="#">Aquisição</a></li>
-                        <li id="arrend"><a href="#">Arrendamento</a></li>
-                        <li id="ced"><a href="#">Cedência</a></li>
-                        <li id="exp"><a href="#">Expropriação</a></li>
-                        <li id="perm"><a href="#">Permuta</a></li>
-                        <li id="vend"><a href="#">Venda</a></li>
-                        <li id="empreitada"><a href="#">Empreitada/Obra</a></li>
+                        <li><a id="aquis" href="#">Aquisição</a><i id="aquis" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="arrend" href="#">Arrendamento</a><i id="arrend" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="ced" href="#">Cedência</a><i id="ced" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="exp" href="#">Expropriação</a><i id="exp" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="perm" href="#">Permuta</a><i id="perm" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="vend" href="#">Venda</a><i id="vend" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="empreitada"href="#">Empreitada/Obra</a><i id="empreitada" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
                 <li role="presentation" class="dropdown" id="litigios">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Litígios Judiciais<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li id="litjud"><a href="#">Litígios</a></li>
+                        <li><a id="litjud" href="#">Litígios</a></li>
                         <li role="separator" class="divider"></li>
-                        <li id="judinst"><a href="#">Instaurado</a></li>
-                        <li id="judalvo"><a href="#">Alvo</a></li>
+                        <li><a id="judinst" href="#">Instaurado</a><i id="judinst" class="glyphicon glyphicon-info-sign"></i></li>
+                        <li><a id="judalvo" href="#">Alvo</a><i id="judalvo" class="glyphicon glyphicon-info-sign"></i></li>
                     </ul>
                 </li>
             </ul>
         </div>
+        
+        <!-------------------------------------------------------------------->
+        <!-------------------------------------------------------------------->
+        
+        <h2><%= entidade.nome%></h2>
+
+        <%- body %>
+
+        <footer>
+            2015 ® Helena Rolas
+        </footer>
+
+        
         <script>
+            $('#title').click(function(){
+                window.location= '/';
+            });
+            
             var nome = "<%= entidade.nome %>";
 
             $( document ).ready(function(){
@@ -155,12 +170,12 @@ For example, here are a few things you could do:
                                 $( ".disabled" ).off();
             }); 
 
-            $("#entidade").click(function(e){  
-                window.location= '/entidade/' + nome;
+            $("i").click(function(event){  
+                window.location= '/help/' + event.target.id;
             });
             
-            $("#help").click(function(e){  
-                window.location= '/help/' + 'avenca';
+            $("#entidade").click(function(e){  
+                window.location= '/entidade/' + nome;
             });
 
             $("#contract").click(function(e){ 
@@ -297,74 +312,9 @@ For example, here are a few things you could do:
             
             $("#judalvo").click(function(e){ 
                 window.location= '/litigio/' + nome + '/filter/alvo';
-            });
+            });    
         </script>
-
-        <!--------------------------------------------------------------------><!-------------------------------------------------------------------->
-        <!--------------------------------------------------------------------><!-------------------------------------------------------------------->
-
-
-        <%- body %>
-
-        <footer>
-            2015 ® Helena Rolas
-        </footer>
-        <script>
-            $('#title').click(function(){
-                window.location= '/';
-            });
-        </script>
-
-
-        <!--
-Client-side Templates
-========================
-
-HTML templates are important prerequisites of modern, rich client applications.
-To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-that you load these templates client-side.
-
-By default, your Gruntfile is configured to automatically load and precompile
-client-side JST templates in your `assets/templates` folder, then
-include them here automatically (between TEMPLATES and TEMPLATES END).
-
-To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-For example, here are a few things you could do:
-
-+ Import templates from other directories
-+ Use a different template engine (handlebars, jade, dust, etc.)
-+ Internationalize your client-side templates using a server-side
-stringfile before they're served.
--->
-
-        <!--TEMPLATES-->
         
-        <!--TEMPLATES END-->
-
-
-        <!--
-
-Client-side Javascript
-========================
-
-You can always bring in JS files manually with `script` tags, or asynchronously
-on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
-take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-By default, files in your `assets/js` folder are included here
-automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-and concatenated into a single file.
-
-To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-For example, here are a few things you could do:
-
-+ Change the order of your scripts
-+ Import scripts from other directories
-+ Use a different preprocessor, like TypeScript
-
--->
-
         <!--SCRIPTS-->
         <script src="/js/dependencies/sails.io.js"></script>
         <!--SCRIPTS END-->
