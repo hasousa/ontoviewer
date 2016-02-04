@@ -20,7 +20,13 @@
                         <td id='ano'><%= receita.ano %></td>
                         <td id='montante'><%= receita.montante %></td>
                         <td id='fundamento'><%= receita.fundamento %></td>
+                        
+                        <% if (receita.pagador) { %>
                         <td id="pagador"><a href="#"><%= receita.pagador.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
                     </tr>
                     <% }) %>
                 </tbody>

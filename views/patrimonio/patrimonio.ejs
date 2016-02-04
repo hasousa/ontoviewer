@@ -46,8 +46,19 @@
                  <tbody>
                     <% _.each(accoes, function(accao){%>
                     <tr id="dados">
-                        <td><%= accao.vendedor.nome%></td>
-                        <td><%= accao.comprador.nome%></td>
+                        
+                        <% if (accao.vendedor) { %>
+                        <td id="vendedor"><a href="#"><%= accao.vendedor.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
+                        <% if (accao.comprador) { %>
+                        <td id="comprador"><a href="#"><%= accao.comprador.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+
                         <td><%= accao.tipo%></td>
                     </tr>
                     <% }) %>
@@ -56,3 +67,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    $("td#comprador").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+    
+    $("td#vendedor").click(function(e){   
+        var nome = $(this).text();
+        window.location= '/entidade/' + nome;
+    });
+</script>

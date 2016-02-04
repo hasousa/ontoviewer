@@ -14,7 +14,14 @@
                 <tbody>
                     <% _.each(empreitadas, function(empreitada){%>
                     <tr id="dados">
+                        
+                        <% if (empreitada.investidor) { %>
                         <td id="investidor"><a href="#"><%= empreitada.investidor.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
+                        
                         <td><%= empreitada.montante %></td>
                         <td><%= empreitada.objecto %></td>
                     </tr>

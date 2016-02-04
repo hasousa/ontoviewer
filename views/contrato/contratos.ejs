@@ -25,8 +25,21 @@
                     <% _.each(contratos, function(contrato){%>
                     <tr id="dados">
                         <td id='tipo'><%= contrato.tipo %></td>
+                        
+                        <% if (contrato.adjudicante) { %>
                         <td id="adjudicante"><a href="#"><%= contrato.adjudicante.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
+                        <% if (contrato.adjudicatario) { %>
                         <td id="adjudicatario"><a href="#"><%= contrato.adjudicatario.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
+                        
+                        
                         <td><%= contrato.montante %></td>
                         <td class='avenca'><%= contrato.funcoes %></td>
                         <td><%= contrato.descricao %></td>

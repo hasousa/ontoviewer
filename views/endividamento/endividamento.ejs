@@ -27,8 +27,19 @@
                         <td id="amortizacao" class='emprestimo'><%= endividamento.amortizacao %></td> 
                         <td id="natureza" class='divida_fornecedor'><%= endividamento.natureza %></td>
                         <td id="montante"><%= endividamento.montante %></td>
+                        
+                        <% if (endividamento.credor) { %>
                         <td id="credor"><a href="#"><%= endividamento.credor.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
+                        <% if (endividamento.devedor) { %>
                         <td id="devedor"><a href="#"><%= endividamento.devedor.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
                     </tr>
                     <% }) %>
                 </tbody>

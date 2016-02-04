@@ -21,8 +21,18 @@
                         <td id='processo'><%= litigio.numero_processo %></td>
                         <td id='ececucao'><%= litigio.prazo_execucao %></td>
                         <td id='sentenca'><%= litigio.sentenca %></td>
+                        
+                        <% if (litigio.acusador) { %>
                         <td id="acusador"><a href="#"><%= litigio.acusador.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
+                        
+                        <% if (litigio.reu) { %>
                         <td id="reu"><a href="#"><%= litigio.reu.nome %></a></td>
+                        <% }else{ %>
+                        <td>null</td>
+                        <% } %>
                     </tr>
                     <% }) %>
                 </tbody>
