@@ -12,7 +12,7 @@ module.exports = {
         localizacao: {type: 'string'},
         registo_predial:{type:'string'},
         tipo: {type:'string'},
-        valor: {type: 'float'},
+        valor: {type: 'string'},
         proprietario: {model: 'entidade'}
     }
 };

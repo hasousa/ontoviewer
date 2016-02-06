@@ -31,9 +31,8 @@
         </div> 
         
         <div class="col-md-1"></div>
-        <div class="col-md-1"></div>
         
-        <div class="panel panel-default col-md-5">
+        <div class="panel panel-default col-md-6">
             <div class="panel-heading"><strong>Actividade</strong></div>
             <table id='actividade' class="table table-striped">
                 <thead>
@@ -41,6 +40,8 @@
                         <th>Vendedor</th>
                         <th>Comprador</th>
                         <th>Acção</th>
+                        <th>Tipo</th>
+                        <th>Valor</th>
                     </tr>
                 </thead>
                  <tbody>
@@ -60,6 +61,9 @@
                         <% } %>
 
                         <td><%= accao.tipo%></td>
+                        <td><%= accao.objecto.tipo%></td>
+                        <td><%= accao.montante%></td>
+                        
                     </tr>
                     <% }) %>
                 </tbody>
@@ -68,7 +72,7 @@
     </div>
 </div>
 
-<script>
+<script>    
     $("td#comprador").click(function(e){   
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
