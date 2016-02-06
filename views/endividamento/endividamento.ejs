@@ -16,6 +16,7 @@
                     <th>Montante</th>
                     <th>Credor</th>
                     <th>Devedor</th>
+                    <th>Objectivo</th>
                 </thead>
                 <tbody>
                     <% _.each(endividamentos, function(endividamento){%>
@@ -39,7 +40,7 @@
                         <% }else{ %>
                         <td>-</td>
                         <% } %>
-                        
+                        <td><%= endividamento.natureza %></td>
                     </tr>
                     <% }) %>
                 </tbody>
