@@ -9,7 +9,7 @@
                 <thead>
                     <th>Investidor</th>
                     <th>Montante</th>
-                    <th >Investidor</th>
+                    <th>Objecto</th>
                 </thead>
                 <tbody>
                     <% _.each(empreitadas, function(empreitada){%>
@@ -23,7 +23,13 @@
                         
                         
                         <td><%= empreitada.montante %></td>
-                        <td><%= empreitada.objecto %></td>
+                        
+                        <% if (empreitada.objecto) { %>
+                        <td><%= empreitada.objecto.tipo %></td>
+                        <% }else{ %>
+                        <td>-</td>
+                        <% } %>
+                        
                     </tr>
                     <% }) %>
                 </tbody>

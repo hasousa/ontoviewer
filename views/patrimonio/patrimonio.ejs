@@ -37,10 +37,11 @@
             <table id='actividade' class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Vendedor</th>
-                        <th>Comprador</th>
+                        <th>Entidade Origem</th>
+                        <th>Entidade Destino</th>
                         <th>Acção</th>
                         <th>Tipo</th>
+                        <th>Registo Predial</th>
                         <th>Valor</th>
                     </tr>
                 </thead>
@@ -50,19 +51,33 @@
                         
                         <% if (accao.vendedor) { %>
                         <td id="vendedor"><a href="#"><%= accao.vendedor.nome %></a></td>
+                        <% }else if(accao.cedente){ %>
+                        <td id="vendedor"><a href="#"><%= accao.cedente.nome %></a></td>
+                        <% }else if(accao.arrendante){ %>
+                        <td id="vendedor"><a href="#"><%= accao.arrendante.nome %></a></td>
                         <% }else{ %>
                         <td>-</td>
                         <% } %>
                         
                         <% if (accao.comprador) { %>
                         <td id="comprador"><a href="#"><%= accao.comprador.nome %></a></td>
+                        <% }else if(accao.cessionario){ %>
+                        <td id="comprador"><a href="#"><%= accao.cessionario.nome %></a></td>
+                        <% }else if(accao.arrendante){ %>
+                        <td id="comprador"><a href="#"><%= accao.arrendatário.nome %></a></td>
                         <% }else{ %>
                         <td>-</td>
                         <% } %>
 
                         <td><%= accao.tipo%></td>
                         <td><%= accao.objecto.tipo%></td>
+                        <td><%= accao.objecto.registo_predial%></td>
+                                            
+                        <% if (accao.montante) { %>
                         <td><%= accao.montante%></td>
+                        <% }else{ %>
+                        <td>-</td>
+                        <% } %>
                         
                     </tr>
                     <% }) %>

@@ -3,7 +3,7 @@ module.exports = {
      attributes: {
         tipo: {type: 'string',
                enum: ['aquisicao', 'arrendamento', 'cedencia', 'expropriacao', 'permuta', 'venda']},
-        montante:{type: 'string'},
+        montante:{type: 'string', defaultsTo: "-"},
         funcoes:{type: 'string'},
         descricao: {type: 'string'},
         fundamento:{type: 'string'},
@@ -19,6 +19,7 @@ module.exports = {
         arrendatário:{model: 'entidade'},
         cedente: { model: 'entidade'},
         cessionario:{model: 'entidade'},
-        objecto:{ model: 'patrimonio'}
+        objecto:{ model: 'patrimonio'},
+         objecto2:{model: 'patrimonio'}
     }
 };
