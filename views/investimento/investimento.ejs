@@ -38,31 +38,31 @@
                         <% if (investimento.parceiro_publico) { %>
                         <td id="parpub" class="ppp"><a href="#"><%= investimento.parceiro_publico.nome %></a></td>
                         <% }else{ %>
-                        <td class="ppp">null</td>
+                        <td class="ppp">-</td>
                         <% } %>
                         
                         <% if (investimento.parceiro_privado) { %>
                         <td id="parpriv" class="ppp"><a href="#"><%= investimento.parceiro_privado.nome %></a></td>
                         <% }else{ %>
-                        <td class="ppp">null</td>
+                        <td class="ppp">-</td>
                         <% } %>
                         
                         <% if (investimento.participante) { %>
                         <td id="participante" class="participacao_social"><a href="#"><%= investimento.participante.nome %></a></td>
                         <% }else{ %>
-                        <td class="participacao_social">null</td>
+                        <td class="participacao_social">-</td>
                         <% } %>
 
                         <% if (investimento.participada) { %>
                         <td id="participada" class="participacao_social"><a href="#"><%= investimento.participada.nome %></a></td>
                         <% }else{ %>
-                        <td class="participacao_social">null</td>
+                        <td class="participacao_social">-</td>
                         <% } %>
                         
                         <% if (investimento.investidor) { %>
                         <td id="invest" class="bem_movel"><a href="#"><%= investimento.investidor.nome %></a></td>
                         <% }else{ %>
-                        <td class="bem_movel">null</td>
+                        <td class="bem_movel">-</td>
                         <% } %>
                         
                         
