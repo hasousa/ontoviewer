@@ -1,8 +1,17 @@
 <script>
-    $('#contractacao').addClass('active');
+    $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+    $('#contratacao').removeClass("btn-default").addClass("btn-primary");
 </script>
 
 <div class="container-fluid">
+    <button type="button" class="btn btn-outline-primary btn-sm" id="empreitada" onclick="sorter(this.id)">Empreitada</button>
+
+    <button type="button" class="btn btn-outline-primary btn-sm" id="bem_movel" onclick="sorter(this.id)">Bem Móvel</button>
+    
+    <button type="button" class="btn btn-outline-primary btn-sm" id="servico" onclick="sorter(this.id)">Serviço</button>
+    
+    <button type="button" class="btn btn-outline-primary btn-sm" id="avenca" onclick="sorter(this.id)">Avença</button>
+    
     <div class="row">        
         <div class="panel panel-default col-md-12">
             <table class="table table-striped">
@@ -25,25 +34,25 @@
                     <% _.each(contratos, function(contrato){%>
                     <tr id="dados">
                         <td id='tipo'><%= contrato.tipo %></td>
-                        
+
                         <% if (contrato.adjudicante) { %>
                         <td id="adjudicante"><a href="#"><%= contrato.adjudicante.nome %></a></td>
                         <% }else{ %>
                         <td>null</td>
                         <% } %>
-                        
+
                         <% if (contrato.adjudicatario) { %>
                         <td id="adjudicatario"><a href="#"><%= contrato.adjudicatario.nome %></a></td>
                         <% }else{ %>
                         <td>null</td>
                         <% } %>
-                        
-                        
-                        
+
+
+
                         <td><%= contrato.montante %></td>
                         <td class='avenca'><%= contrato.funcoes %></td>
                         <td><%= contrato.descricao %></td>
-                        <td class='empreitada avenca'><%= contrato.duracao %></td> 
+                        <td class='empreitad avenca'><%= contrato.duracao %></td> 
                         <td class='avenca'><%= contrato.fundamento %></td>
                         <td class='servico'><%= contrato.data_publicacao %></td>
                         <td><%= contrato.data_inicio %></td>
@@ -75,4 +84,19 @@
         var nome = $(this).text();
         window.location= '/entidade/' + nome;
     });
+
+    function sorter(val) {
+        var input, filter, tbody, tr, i;
+        input =val;
+        filter = input.toUpperCase();
+        tr = document.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+            if (tr[i].cells["0"].textContent.toUpperCase() == filter) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+
 </script>

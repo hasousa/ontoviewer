@@ -43,6 +43,7 @@ For example, here are a few things you could do:
         <!--STYLES-->
         <link rel="stylesheet" href="/styles/custom.css">
         <link rel="stylesheet" href="/styles/importer.css">
+        <link rel="stylesheet" href="/styles/layout.css">
         <!--STYLES END-->
     </head>
 
@@ -53,263 +54,117 @@ For example, here are a few things you could do:
             </h1>
         </header>
 
-        <!-------------------------------------------------------------------->
-        <!----------------------        NAVIGATION       --------------------->
-        <div>
-            <ul class="nav nav-tabs">
-                <li role="presentation" id="entidade"><a href="#">Entidade</a></li>
-                <li role="presentation" class="dropdown" id="contractacao">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contratação<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">                        
-                        <li><a id="contract" href="#">Contratação</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="avenca" href="#">Avença</a><i id="avenca" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="bemovel" href="#">Bem Móvel</a><i id="bemovel" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="cont_empreitada" href="#">Empreitada</a><i id="cont_empreitada" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="servico" href="#">Serviço</a><i id="servico" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown pubonly" id="investimento">
-                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Investimento<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a id="invest" href="#">Investimento</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="bemmovel" href="#">Bem Móvel</a><i id="bemmovel" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="ppp" href="#">PPP</a><i id="ppp" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="partsoc" href="#">Participação Social</a><i id="partsoc" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown pubonly" id="receita">
-                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Receita<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a id="rec" href="#">Receita</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="imposto" href="#">Imposto</a><i id="imposto" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="subsidiorec" href="#">Subsídio</a><i id="subsidiorec" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="tarifa" href="#">Tarifa</a><i id="tarifa" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="taxa" href="#">Taxa</a><i id="taxa" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="transfrec" href="#">Transferência</a><i id="transfrec" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown pubonly" id="despesa">
-                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Despesa<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a id="desp" href="#">Despesa</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="despext" href="#">Despesa Extraordinária</a><i id="despext" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="indem" href="#">Indemnização</a><i id="indem" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="sub" href="#">Subsídios</a><i id="sub" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="transf" href="#">Transferência</a><i id="transf" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown" id="endividamento">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Endividamento<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a id="endiv" href="#">Endividamento</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="divforn" href="#">Dívidas Fornecedores</a><i id="divforn" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="emprestimo" href="#">Empréstimos</a><i id="emprestimo" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown pubonly" id="patrimonio">
-                    <a class="dropdown-toggle pubonly" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Património<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a id="patrim" href="#">Património</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="aquis" href="#">Aquisição</a><i id="aquis" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="arrend" href="#">Arrendamento</a><i id="arrend" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="ced" href="#">Cedência</a><i id="ced" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="exp" href="#">Expropriação</a><i id="exp" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="perm" href="#">Permuta</a><i id="perm" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="vend" href="#">Venda</a><i id="vend" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="empreitada"href="#">Empreitada/Obra</a><i id="empreitada" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-                <li role="presentation" class="dropdown" id="litigios">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Litígios Judiciais<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a id="litjud" href="#">Litígios</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a id="judinst" href="#">Instaurado</a><i id="judinst" class="glyphicon glyphicon-info-sign"></i></li>
-                        <li><a id="judalvo" href="#">Alvo</a><i id="judalvo" class="glyphicon glyphicon-info-sign"></i></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <!-------------------------------------------------------------------->
-        <!-------------------------------------------------------------------->
-        
-        <h2><%= entidade.nome%></h2>
 
-        <%- body %>
-        
+        <!-------------------------------------------------------------------->
+        <!-------------------------------------------------------------------->
+
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="card hovercard">
+                <div class="card-info"> <span class="card-title"  style="z-index: 1">Câmara Municipal de Coimbra</span></div>
+            </div>
+            <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                    <button type="button" id="perfil" class="btn btn-default" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Perfil</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="contratacao" class="btn btn-default" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Contratação</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="investimento" class="btn btn-default pubonly" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Investimento</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="receita" class="btn btn-default pubonly" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Receita</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="despesa" class="btn btn-default pubonly" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Despesa</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="endividamento" class="btn btn-default" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Endividamento</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="patrimonio" class="btn btn-default pubonly" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Património</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="litigios" class="btn btn-default" data-toggle="tab"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <div class="hidden-xs">Litígios Judiciais</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="well">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab1">
+                        <%- body %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
         <script>
             $('#title').click(function(){
                 window.location= '/';
             });
-            
-            var nome = "<%= entidade.nome %>";
 
+            var nome = "<%= entidade.nome %>";    
+            
             $( document ).ready(function(){
                 if('<%= entidade.tipo%>' != 'publica'){
                    $('.pubonly').addClass('disabled');
-            }
-                                $( ".disabled" ).off();
+                }
+                $( ".disabled" ).off();
             }); 
 
-            $("i").click(function(event){  
-                window.location= '/help/' + event.target.id;
-            });
-            
-            $("#entidade").click(function(e){  
+            $("#perfil").click(function(e){ 
                 window.location= '/entidade/' + nome;
             });
 
-            $("#contract").click(function(e){ 
+            $("#contratacao").click(function(e){ 
                 window.location= '/contrato/' + nome;
             });
-
-            $('#avenca').click(function(){
-                window.location= '/contrato/' + nome + '/filter/avenca';
-            });
-
-            $('#bemovel').click(function(){
-                window.location= '/contrato/' + nome + '/filter/bem_movel';
-            });
-
-            $('#cont_empreitada').click(function(){
-                window.location= '/contrato/' + nome + '/filter/empreitada';
-            });
-
-            $('#servico').click(function(){
-                window.location= '/contrato/' + nome + '/filter/servico';
-            });
-
-            $("#invest").click(function(e){ 
+            
+             $("#investimento").click(function(e){ 
                 window.location= '/investimento/' + nome;
             });
             
-             $("#bemmovel").click(function(e){ 
-                window.location= '/investimento/' + nome + '/filter/bem_movel';
-            });
-            
-             $("#ppp").click(function(e){ 
-                window.location= '/investimento/' + nome + '/filter/ppp';
-            });
-            
-             $("#partsoc").click(function(e){ 
-                window.location= '/investimento/' + nome + '/filter/participacao_social';
-            });
-
-            $("#rec").click(function(e){ 
+             $("#receita").click(function(e){ 
                 window.location= '/receita/' + nome;
             });
-            
-            $("#imposto").click(function(e){ 
-                window.location= '/receita/' + nome + '/filter/imposto';
-            });
-            
-            $("#subsidiorec").click(function(e){ 
-                window.location= '/receita/' + nome + '/filter/subsidio_recebido';
-            });
-            
-            $("#tarifa").click(function(e){ 
-                window.location= '/receita/' + nome + '/filter/tarifa';
-            });
-            
-            $("#taxa").click(function(e){ 
-                window.location= '/receita/' + nome + '/filter/taxa';
-            });
-            
-            $("#transfrec").click(function(e){ 
-                window.location= '/receita/' + nome + '/filter/transferencia_recebida';
-            });
 
-            $("#desp").click(function(e){ 
+             $("#despesa").click(function(e){ 
                 window.location= '/despesa/' + nome;
             });
             
-            $("#despext").click(function(e){ 
-                window.location= '/despesa/' + nome + '/filter/extraordinaria';
-            });
-            
-            $("#indem").click(function(e){ 
-                window.location= '/despesa/' + nome + '/filter/indemnizacao';
-            });
-            
-            $("#sub").click(function(e){ 
-                window.location= '/despesa/' + nome + '/filter/subsidio_concedido';
-            });
-            
-            $("#transf").click(function(e){ 
-                window.location= '/despesa/' + nome + '/filter/transferencia';
-            });
-
-            $("#endiv").click(function(e){ 
+             $("#endividamento").click(function(e){ 
                 window.location= '/endividamento/' + nome;
             });
             
-            $("#divforn").click(function(e){ 
-                window.location= '/endividamento/' + nome + '/filter/divida_fornecedor';
-            });
-            
-            $("#emprestimo").click(function(e){ 
-                window.location= '/endividamento/' + nome + '/filter/emprestimo';
-            });
-
-            $("#patrim").click(function(e){   
+             $("#patrimonio").click(function(e){ 
                 window.location= '/patrimonio/' + nome;
             });
             
-            $("#empreitada").click(function(e){   
-                window.location= '/empreitada/' + nome;
-            });
-            
-            $("#aquis").click(function(e){   
-                window.location= '/patrimonio/' + nome + '/filter/aquisicao';
-            });
-            
-            $("#arrend").click(function(e){   
-                window.location= '/patrimonio/' + nome + '/filter/arrendamento';
-            });
-            
-            $("#ced").click(function(e){   
-                window.location= '/patrimonio/' + nome + '/filter/cedencia';
-            });
-            
-            $("#exp").click(function(e){   
-                window.location= '/patrimonio/' + nome + '/filter/expropriacao';
-            });
-            
-            $("#perm").click(function(e){   
-                window.location= '/patrimonio/' + nome + '/filter/permuta';
-            });
-            
-            $("#vend").click(function(e){   
-                window.location= '/patrimonio/' + nome + '/filter/venda';
-            });
-
-            $("#litjud").click(function(e){ 
+            $("#litigios").click(function(e){ 
                 window.location= '/litigio/' + nome;
             });
-            
-            $("#judinst").click(function(e){ 
-                window.location= '/litigio/' + nome + '/filter/instaurado';
-            });
-            
-            $("#judalvo").click(function(e){ 
-                window.location= '/litigio/' + nome + '/filter/alvo';
-            });    
+
         </script>
-        
+
         <!--SCRIPTS-->
         <script src="/js/dependencies/sails.io.js"></script>
         <!--SCRIPTS END-->
